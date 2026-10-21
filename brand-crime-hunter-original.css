@@ -1,0 +1,17 @@
+/* BRAND: Crime Hunter. Values only; no layout rules live here.
+   Source: Confluence "Crime Hunter" page (Poppins; orange #D63A1A, ochre #D18B00, off-white #F3EDDF,
+   black, purple #3D003D for cards and overlays). */
+:root {
+  --coi-bg: #ffffff;
+  --coi-text: #000000;
+  --coi-muted: #4d4d4d;
+  --coi-primary: #000000;
+  --coi-accent: #d63a1a;
+  --coi-accent-2: #d18b00;
+  --coi-on-accent: #ffffff;
+  --coi-surface: #f3eddf;
+  --coi-border: #ddd5c3;
+  --coi-overlay-rgb: 61, 0, 61;
+  --coi-social: #d63a1a;   /* social icon color: brand orange */
+  --coi-font: "Poppins", system-ui, sans-serif;
+}

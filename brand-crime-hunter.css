@@ -1,0 +1,20 @@
+/* BRAND: Crime Hunter (Evidence Table: graphite, paper, brand orange as a rare hit). Values only; no layout rules live here.
+   Direction: documentary, somber, evidence on a table; minimal color hits; no thriller-poster saturation. */
+:root {
+  --coi-bg: #ffffff;
+  --coi-text: #1a1a1a;
+  --coi-muted: #5c5852;
+  --coi-primary: #1a1a1a;        /* graphite ink */
+  --coi-accent: #d63a1a;         /* brand orange, kept only as a rare hit (rules, underlines, hover) */
+  --coi-accent-2: #1a1a1a;
+  --coi-on-accent: #ffffff;
+  --coi-surface: #efede8;        /* paper */
+  --coi-border: #d6d2c9;
+  --coi-overlay-rgb: 12, 12, 12; /* near-black, low controlled light */
+  --coi-social: #1a1a1a;
+  --coi-tag-bg: #2a2a2a;         /* neutral evidence-label tags */
+  --coi-tag-text: #ffffff;
+  --coi-label: #1a1a1a;
+  --coi-rule: #d63a1a;
+  --coi-font: "Poppins", system-ui, sans-serif;
+}

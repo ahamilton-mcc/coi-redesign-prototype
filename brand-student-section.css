@@ -1,0 +1,17 @@
+/* BRAND: Student Section. Values only; no layout rules live here.
+   Source: live Astra global palette (navy, burgundy, light gray, orange-red) and the brand logo (teal is
+   approximate, to be confirmed against the brand kit). Font is Poppins, as on the live site. */
+:root {
+  --coi-bg: #ffffff;
+  --coi-text: #00113a;
+  --coi-muted: #4b5870;
+  --coi-primary: #00113a;
+  --coi-accent: #e03100;
+  --coi-accent-2: #00868c;
+  --coi-on-accent: #ffffff;
+  --coi-surface: #f2f5f7;
+  --coi-border: #d5dce3;
+  --coi-overlay-rgb: 0, 17, 58;
+  --coi-social: #e03100;   /* social icon color: brand orange */
+  --coi-font: "Poppins", system-ui, sans-serif;
+}

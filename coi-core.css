@@ -1,0 +1,266 @@
+/* =====================================================================
+   COI CORE: shared by every COI site. Do not put brand values here.
+   Brand values (colors, font, logo) live in brand-<site>.css / .js.
+   All sizes are rem. Breakpoints use px to match Astra (921 / 544).
+   ===================================================================== */
+
+:root {
+  /* Defaults only; every brand file overrides these. */
+  --coi-bg: #ffffff;
+  --coi-text: #1a1a1a;
+  --coi-muted: #566170;
+  --coi-primary: #111111;
+  --coi-accent: #c0392b;
+  --coi-accent-2: #1d7a85;
+  --coi-on-accent: #ffffff;
+  --coi-surface: #f3f4f6;
+  --coi-border: #dcdfe4;
+  --coi-overlay-rgb: 0, 0, 0;
+  --coi-font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Optional range tokens. Defaults reproduce the base look; a brand file can set any of them for more range. */
+  --coi-secondary: var(--coi-primary);      /* chips, buttons, structure */
+  --coi-heading: var(--coi-primary);        /* page and article headlines */
+  --coi-label: var(--coi-accent);           /* small uppercase labels (must pass contrast on the page background) */
+  --coi-tag-bg: var(--coi-accent);          /* category tags on cards */
+  --coi-tag-text: var(--coi-on-accent);
+  --coi-rule: var(--coi-accent);            /* quote bars, inline Editor's Picks bar, link underlines */
+  --coi-header-rule: var(--coi-border);     /* line under the masthead */
+  --coi-header-rule-w: 1px;
+  --coi-box-rule: var(--coi-border);        /* top edge of Editor's Picks / Keep reading boxes */
+  --coi-box-rule-w: 1px;
+  --coi-footer-rule: var(--coi-border);
+  --coi-footer-rule-w: 1px;
+
+  --coi-max: 77.5rem;      /* page container, about 1320px at a 17px root */
+  --coi-gap: 1.5rem;
+  --coi-radius: 0.6rem;
+  color-scheme: light;
+}
+
+/* Astra root sizes: 106.25% (17px) on desktop, about 15.5px at 921px and below */
+html { font-size: 106.25%; -webkit-text-size-adjust: 100%; }
+@media (max-width: 921px) { html { font-size: 96.9%; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--coi-font);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: var(--coi-text);
+  background: var(--coi-bg);
+}
+img { max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 0.18rem solid var(--coi-accent-2); outline-offset: 0.18rem; }
+.coi-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.coi-skip { position: absolute; left: -999px; top: 0; background: var(--coi-primary); color: #fff; padding: 0.6rem 1rem; z-index: 200; }
+.coi-skip:focus { left: 0; }
+
+/* ---------------- Header (template part) ---------------- */
+/* The masthead wrapper (the template part's outer element) is what sticks, on every device size. */
+.coi-masthead { position: sticky; top: 0; z-index: 60; }
+.coi-header { background: var(--coi-bg); border-bottom: var(--coi-header-rule-w) solid var(--coi-header-rule); }
+.coi-header__bar {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  max-width: var(--coi-max); margin: 0 auto; padding: 0.55rem 1rem; gap: 1rem;
+}
+.coi-menu-btn {
+  display: inline-flex; align-items: center; gap: 0.55rem; justify-self: start;
+  background: none; border: 0; padding: 0.4rem; cursor: pointer; font: inherit; font-weight: 600;
+  color: var(--coi-primary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.coi-menu-btn svg { width: 1.6rem; height: 1.6rem; }
+.coi-logo { display: block; line-height: 0; }
+.coi-logo img { height: 2.9rem; width: auto; }
+.coi-social { justify-self: end; display: none; gap: 0.2rem; }
+.coi-social a, .coi-footer__social a {
+  width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; color: var(--coi-social, var(--coi-accent)); text-decoration: none;
+}
+.coi-social svg, .coi-footer__social svg { width: 1.05rem; height: 1.05rem; fill: currentColor; }   /* about 18px, matches today's header icons */
+.coi-social a:hover, .coi-footer__social a:hover { color: var(--coi-primary); background: var(--coi-surface); }
+.coi-search-btn { justify-self: end; background: none; border: 0; padding: 0.4rem; color: var(--coi-primary); cursor: pointer; }
+.coi-search-btn svg { width: 1.4rem; height: 1.4rem; }
+@media (min-width: 922px) {
+  .coi-social { display: flex; }
+  .coi-search-btn { display: none; }
+  .coi-logo img { height: 3.3rem; }
+}
+@media (max-width: 543px) { .coi-menu-btn span { display: none; } }
+
+/* Category chips: live on the page, above the first card (not in the header) */
+.coi-chips { display: flex; gap: 0.5rem; overflow-x: auto; padding: 0.1rem 0 0.9rem; scrollbar-width: none; }
+.coi-chips > :first-child { margin-left: auto; }   /* centers the row, and still scrolls from the first chip when too wide */
+.coi-chips > :last-child { margin-right: auto; }
+.coi-chips::-webkit-scrollbar { display: none; }
+.coi-chip {
+  flex: 0 0 auto; padding: 0.4rem 0.95rem; border: 1px solid var(--coi-secondary); border-radius: 999px;
+  color: var(--coi-secondary); text-decoration: none; font-size: 0.82rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.04em; background: transparent;
+}
+.coi-chip:hover, .coi-chip[aria-current="page"] { background: var(--coi-secondary); color: #fff; }
+@media (min-width: 922px) { .coi-chip { padding: 0.34rem 0.62rem; font-size: 0.72rem; letter-spacing: 0.03em; } .coi-chips { gap: 0.35rem; } }
+
+/* Menu drawer */
+.coi-drawer-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45); z-index: 70; }
+.coi-drawer {
+  position: fixed; top: 0; bottom: 0; left: 0; width: min(22rem, 88vw); background: var(--coi-bg); z-index: 80;
+  padding: 1.2rem 1.4rem 2rem; overflow-y: auto; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25);
+}
+.coi-drawer[hidden], .coi-drawer-overlay[hidden] { display: none; }
+.coi-drawer__close { background: none; border: 0; font-size: 1.8rem; line-height: 1; cursor: pointer; float: right; color: var(--coi-primary); }
+.coi-drawer h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--coi-muted); margin: 1.6rem 0 0.4rem; clear: both; }
+.coi-drawer ul { list-style: none; margin: 0; padding: 0; }
+.coi-drawer li a { display: block; padding: 0.55rem 0; font-weight: 600; text-decoration: none; color: var(--coi-primary); border-bottom: 1px solid var(--coi-border); }
+.coi-drawer li a:hover { color: var(--coi-accent); }
+.coi-drawer .coi-drawer__legal a { font-weight: 400; font-size: 0.9rem; }
+
+/* ---------------- Layout ---------------- */
+.coi-layout {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--coi-gap);
+  max-width: var(--coi-max); margin: 0 auto; padding: 1rem 1rem 2.5rem;
+}
+.coi-rail--left { display: none; }
+.coi-rail--right { display: none; }
+@media (min-width: 922px) {
+  .coi-layout { grid-template-columns: minmax(11rem, 15rem) minmax(0, 34rem) 300px; justify-content: center; padding-top: 1.6rem; }
+  .coi-layout--article { grid-template-columns: minmax(11rem, 15rem) minmax(0, 42rem) 300px; }
+  .coi-rail--left, .coi-rail--right { display: block; }
+}
+.coi-rail--right .coi-sticky { position: sticky; top: 5.4rem; }
+.coi-rail--left .coi-sticky { position: sticky; top: 5.4rem; }
+
+/* ---------------- Feed cards ---------------- */
+.coi-feed { display: grid; gap: 1.25rem; }
+.coi-card {
+  position: relative; display: block; aspect-ratio: 5 / 7; border-radius: var(--coi-radius); overflow: hidden;
+  background: var(--coi-surface); color: #fff; text-decoration: none; isolation: isolate;
+}
+.coi-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.coi-card::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(to top, rgba(var(--coi-overlay-rgb), 0.9) 0%, rgba(var(--coi-overlay-rgb), 0.5) 38%, rgba(var(--coi-overlay-rgb), 0) 68%);
+}
+.coi-tag {
+  position: absolute; top: 0.85rem; left: 0.85rem; background: var(--coi-tag-bg); color: var(--coi-tag-text);
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.6rem; border-radius: 0.25rem;
+}
+.coi-card__body { position: absolute; left: 1.1rem; right: 1.1rem; bottom: 1.1rem; }
+.coi-card__title { font-size: 1.55rem; line-height: 1.15; font-weight: 700; margin: 0 0 0.6rem; text-wrap: balance; }
+.coi-card__meta { font-size: 0.8rem; font-weight: 500; opacity: 0.92; }
+.coi-card:hover .coi-card__title { text-decoration: underline; text-underline-offset: 0.18em; }
+.coi-load { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; margin: 1.6rem 0 0.4rem; }
+.coi-btn {
+  font: inherit; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.06em;
+  background: var(--coi-secondary); color: #fff; border: 0; border-radius: 999px; padding: 0.85rem 2.2rem; cursor: pointer;
+}
+.coi-btn:hover { background: var(--coi-accent); color: var(--coi-on-accent); }
+.coi-end { color: var(--coi-muted); font-size: 0.9rem; margin: 0; }
+
+/* Editor's Picks (left rail) */
+.coi-picks { border: 1px solid var(--coi-border); border-top: var(--coi-box-rule-w) solid var(--coi-box-rule); border-radius: var(--coi-radius); padding: 1rem; background: var(--coi-bg); }
+.coi-picks h2, .coi-keep h2 { font-size: 0.78rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--coi-label); margin: 0 0 0.7rem; }
+.coi-picks ol, .coi-keep ol { list-style: none; margin: 0; padding: 0; }
+.coi-pick { display: grid; grid-template-columns: 3.6rem 1fr; gap: 0.7rem; padding: 0.7rem 0; border-top: 1px solid var(--coi-border); text-decoration: none; color: var(--coi-primary); }
+.coi-picks li:first-child .coi-pick, .coi-keep li:first-child .coi-pick { border-top: 0; padding-top: 0; }
+.coi-pick img { width: 3.6rem; height: 3.6rem; object-fit: cover; border-radius: 0.3rem; }
+.coi-pick strong { display: block; font-size: 0.86rem; line-height: 1.25; font-weight: 600; }
+.coi-pick small { color: var(--coi-muted); font-size: 0.72rem; }
+.coi-pick:hover strong { color: var(--coi-accent); text-decoration: underline; }
+.coi-keep { margin-top: 1.4rem; border: 1px solid var(--coi-border); border-top: var(--coi-box-rule-w) solid var(--coi-box-rule); border-radius: var(--coi-radius); padding: 1rem; }
+
+/* ---------------- Ad slot component ----------------
+   Production: the <yz-ad> tag goes inside .coi-ad__box.
+   One switch per site (body[data-ads]) turns every slot on or off. */
+.coi-ad { margin: 0 auto 1rem; text-align: center; }
+.coi-ad__label { display: block; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coi-muted); margin-bottom: 0.25rem; }
+.coi-ad__box {
+  width: 300px; max-width: 100%; height: 250px; margin: 0 auto; display: flex; align-items: center; justify-content: center;
+  border: 1px dashed var(--coi-border); background: repeating-linear-gradient(45deg, var(--coi-surface), var(--coi-surface) 0.5rem, var(--coi-bg) 0.5rem, var(--coi-bg) 1rem);
+  color: var(--coi-muted); font-size: 0.72rem;
+}
+body[data-ads="off"] .coi-ad { display: none; }
+.coi-ad--infeed { margin: 0.25rem auto; }
+
+/* ---------------- Article ---------------- */
+.coi-article__tag { display: inline-block; position: static; margin-bottom: 0.8rem; text-decoration: none; }
+.coi-article h1 { font-size: 2rem; line-height: 1.15; font-weight: 700; color: var(--coi-heading); margin: 0 0 0.7rem; text-wrap: balance; }
+.coi-byline { color: var(--coi-muted); font-size: 0.85rem; margin: 0 0 1.1rem; }
+.coi-byline strong { color: var(--coi-primary); }
+.coi-hero { margin: 0 0 1.3rem; }
+.coi-hero img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--coi-radius); display: block; }
+.coi-hero figcaption, .coi-prose figcaption { font-size: 0.78rem; color: var(--coi-muted); margin-top: 0.4rem; }
+.coi-prose { font-size: 1.1rem; line-height: 1.5; }
+.coi-prose > * { max-width: 100%; }
+.coi-prose p { margin: 0 0 1.1rem; }
+.coi-prose h2 { font-size: 1.5rem; line-height: 1.2; color: var(--coi-heading); margin: 1.8rem 0 0.7rem; }
+.coi-prose h3 { font-size: 1.2rem; color: var(--coi-primary); margin: 1.4rem 0 0.5rem; }
+.coi-prose a { text-decoration: underline; text-decoration-color: var(--coi-rule); text-underline-offset: 0.18em; color: var(--coi-primary); }
+.coi-prose blockquote { margin: 1.4rem 0; padding: 0.4rem 1.1rem; border-left: 0.3rem solid var(--coi-rule); font-size: 1.15rem; font-weight: 600; color: var(--coi-primary); }
+.coi-prose figure { margin: 1.3rem 0; }
+.coi-prose ul, .coi-prose ol { padding-left: 1.4rem; margin: 0 0 1.1rem; }
+.coi-share { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 1.6rem 0; padding: 0.9rem 0; border-top: 1px solid var(--coi-border); border-bottom: 1px solid var(--coi-border); }
+.coi-share span { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 0.4rem; color: var(--coi-primary); }
+.coi-share a { font-size: 0.82rem; font-weight: 600; padding: 0.35rem 0.8rem; border: 1px solid var(--coi-border); border-radius: 999px; text-decoration: none; color: var(--coi-primary); }
+.coi-share a:hover { background: var(--coi-primary); color: #fff; }
+@media (min-width: 922px) { .coi-article h1 { font-size: 2.3rem; } }
+
+/* Mobile: Keep Reading shows under the article */
+.coi-keep--mobile { display: block; }
+@media (min-width: 922px) { .coi-keep--mobile { display: none; } }
+
+/* ---------------- Category / archive header ---------------- */
+.coi-archive-head { grid-column: 1 / -1; padding: 0.4rem 0 0.2rem; }
+.coi-archive-head .coi-eyebrow { font-size: 0.78rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--coi-label); font-weight: 700; margin: 0 0 0.3rem; }
+.coi-archive-head h1 { font-size: 2.2rem; line-height: 1.1; margin: 0 0 0.5rem; color: var(--coi-heading); }
+.coi-archive-head p { margin: 0 0 0.9rem; color: var(--coi-muted); max-width: 40rem; }
+.coi-subchips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.coi-subchips .coi-chip { padding: 0.4rem 0.95rem; font-size: 0.82rem; letter-spacing: 0.04em; }
+.coi-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); }
+.coi-main--wide { grid-column: 1 / -1; }
+
+/* ---------------- Standard pages (About, Copyright) ---------------- */
+.coi-page { max-width: 46rem; margin: 0 auto; padding: 1.6rem 1rem 3rem; }
+.coi-page h1 { font-size: 2.2rem; line-height: 1.1; color: var(--coi-heading); margin: 0 0 1.2rem; }
+.coi-author-head { display: flex; gap: 1.1rem; align-items: center; margin-bottom: 1.4rem; }
+.coi-avatar { width: 5rem; height: 5rem; border-radius: 50%; background: var(--coi-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; flex: none; }
+
+/* ---------------- Footer (template part) ---------------- */
+.coi-footer { background: var(--coi-surface); border-top: var(--coi-footer-rule-w) solid var(--coi-footer-rule); margin-top: 1rem; }
+.coi-footer__inner { max-width: var(--coi-max); margin: 0 auto; padding: 1.8rem 1rem 2.4rem; display: grid; gap: 1.1rem; justify-items: center; text-align: center; }
+.coi-footer__logo img { height: 2.8rem; width: auto; }
+.coi-footer__social { display: flex; gap: 0.5rem; }
+.coi-footer__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; justify-content: center; padding: 0; margin: 0; list-style: none; }
+.coi-footer__links a { font-size: 0.82rem; color: var(--coi-primary); text-decoration: none; }
+.coi-footer__links a:hover { text-decoration: underline; }
+.coi-footer__copy { font-size: 0.78rem; color: var(--coi-muted); margin: 0; }
+
+/* ---------------- Prototype-only controls (not part of the kit) ---------------- */
+.proto-bar {
+  position: fixed; right: 0.6rem; bottom: 0.6rem; z-index: 300; background: #111; color: #fff; border-radius: 0.6rem;
+  padding: 0.5rem 0.7rem; font: 600 0.72rem/1.2 system-ui, sans-serif; display: flex; gap: 0.7rem; flex-wrap: wrap; align-items: center; max-width: 94vw;
+}
+.proto-bar label { display: inline-flex; gap: 0.3rem; align-items: center; }
+.proto-bar select, .proto-bar input { font: inherit; }
+.proto-bar a { color: #9fd3ff; }
+.proto-note { background: #fff7d6; border-bottom: 1px solid #e6d58a; color: #5a4b00; font: 500 0.72rem/1.3 system-ui, sans-serif; padding: 0.35rem 1rem; text-align: center; }
+
+@media (prefers-reduced-motion: no-preference) { .coi-card, .coi-btn { transition: background-color 0.15s ease; } }
+
+/* ---------- Editor's Picks inside the article (mobile and tablet only; desktop uses the left rail) ----------
+   Designed so it does not read like the end of the story: it sits in the text column, has an accent bar and a
+   tinted background instead of a full-width break, and ends with a "story continues" cue. */
+.coi-picks--inline { margin: 1.6rem 0 1.4rem; border: 0; border-left: 0.3rem solid var(--coi-rule); background: var(--coi-surface); border-radius: 0 var(--coi-radius) var(--coi-radius) 0; padding: 0.9rem 1rem 0.7rem; }
+.coi-picks--inline .coi-pick { padding: 0.6rem 0; }
+.coi-continue { display: flex; align-items: center; gap: 0.6rem; margin: 0.6rem 0 0; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--coi-muted); }
+.coi-continue::before, .coi-continue::after { content: ""; flex: 1; height: 1px; background: var(--coi-border); }
+.coi-continue span::after { content: " \2193"; }
+@media (min-width: 922px) { .coi-picks--inline { display: none; } }
+@media (min-width: 922px) { .coi-keep--mobile { display: none; } }
+/* Keep the inline Editor's Picks block from inheriting article text styles */
+.coi-prose .coi-picks h2 { font-size: 0.78rem; line-height: 1.2; letter-spacing: 0.09em; text-transform: uppercase; color: var(--coi-label); margin: 0 0 0.7rem; }
+.coi-prose .coi-picks ol { padding: 0; margin: 0; }
+.coi-prose .coi-pick { text-decoration: none; color: var(--coi-primary); }
+.coi-prose .coi-pick:hover strong { text-decoration: underline; color: var(--coi-accent); }

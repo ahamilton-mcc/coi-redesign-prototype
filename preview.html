@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COI prototype: device preview</title>
+<style>
+  body { margin: 0; background: #1b1d21; font: 600 13px/1.2 system-ui, sans-serif; color: #fff; }
+  .bar { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; padding: 8px 12px; background: #111; }
+  .bar button, .bar select { font: inherit; padding: 6px 12px; border-radius: 6px; border: 1px solid #444; background: #2a2d33; color: #fff; cursor: pointer; }
+  .bar button[aria-pressed="true"] { background: #fff; color: #111; border-color: #fff; }
+  .bar a { color: #9fd3ff; }
+  .bar label { display: inline-flex; gap: 5px; align-items: center; }
+  .stage { padding: 12px; display: flex; justify-content: center; }
+  .wrap { background: #fff; box-shadow: 0 6px 30px rgba(0,0,0,.5); border-radius: 10px; overflow: hidden; }
+  iframe { border: 0; display: block; transform-origin: top left; background: #fff; }
+  .dim { color: #aab; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="bar">
+  <span>
+    <button data-d="desktop">Desktop</button>
+    <button data-d="tablet">Tablet</button>
+    <button data-d="mobile">Mobile</button>
+  </span>
+  <label><input type="checkbox" id="actual"> Actual size</label>
+  <label>Brand <select id="brand"><option value="student-section">Student Section</option><option value="crime-hunter">Crime Hunter</option><option value="crime-hunter-original">Crime Hunter: original palette (reference only)</option></select></label>
+  <label><input type="checkbox" id="ads"> Ads on</label>
+  <span>Page:
+    <a href="#" data-src="index.html">Home</a> &middot;
+    <a href="#" data-src="category.html?c=Conferences">Category</a> &middot;
+    <a href="#" data-src="article.html">Article</a> &middot;
+    <a href="#" data-src="page.html">About</a> &middot;
+    <a href="#" data-src="author.html">Author</a>
+  </span>
+  <span class="dim" id="info"></span>
+</div>
+<div class="stage"><div class="wrap" id="wrap"><iframe id="frame" title="Prototype preview"></iframe></div></div>
+<script>
+  var SIZES = { desktop: [1440, 900], tablet: [820, 1180], mobile: [390, 844] };
+  var q = new URLSearchParams(location.search);
+  var dev = q.get('d') || 'desktop';
+  var src = q.get('src') || 'index.html';
+  var frame = document.getElementById('frame'), wrap = document.getElementById('wrap');
+
+  function fit() {
+    var s = SIZES[dev], actual = document.getElementById('actual').checked;
+    var availW = window.innerWidth - 24;
+    var scale = actual ? 1 : Math.min(1, availW / s[0]);
+    var barH = document.querySelector('.bar').offsetHeight;
+    var availH = window.innerHeight - barH - 24;
+    var h = actual ? s[1] : Math.max(300, availH / scale);
+    frame.style.width = s[0] + 'px';
+    frame.style.height = h + 'px';
+    frame.style.transform = 'scale(' + scale + ')';
+    wrap.style.width = Math.round(s[0] * scale) + 'px';
+    wrap.style.height = Math.round(h * scale) + 'px';
+    document.getElementById('info').textContent = dev + ' ' + s[0] + 'px wide' + (scale < 1 ? ' (shown at ' + Math.round(scale * 100) + '%)' : '');
+    document.querySelectorAll('button[data-d]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.d === dev); });
+  }
+  function load() { frame.src = src; }
+
+  document.querySelectorAll('button[data-d]').forEach(function (b) { b.addEventListener('click', function () { dev = b.dataset.d; history.replaceState(null, '', '?d=' + dev + '&src=' + encodeURIComponent(src)); fit(); }); });
+  document.querySelectorAll('a[data-src]').forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); src = a.dataset.src; history.replaceState(null, '', '?d=' + dev + '&src=' + encodeURIComponent(src)); load(); }); });
+  document.getElementById('actual').addEventListener('change', fit);
+  var br = document.getElementById('brand'); br.value = localStorage.getItem('coi-brand') || 'student-section';
+  br.addEventListener('change', function () { localStorage.setItem('coi-brand', br.value); frame.contentWindow.location.reload(); });
+  var ad = document.getElementById('ads'); ad.checked = (localStorage.getItem('coi-ads') || 'on') !== 'off';
+  ad.addEventListener('change', function () { var v = ad.checked ? 'on' : 'off'; localStorage.setItem('coi-ads', v); try { frame.contentDocument.body.setAttribute('data-ads', v); } catch (e) { frame.contentWindow.location.reload(); } });
+  window.addEventListener('resize', fit);
+  fit(); load();
+</script>
+</body>
+</html>
