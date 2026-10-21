@@ -35,21 +35,22 @@
     x: '<path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>',
     instagram: '<path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.2-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/>',
     tiktok: '<path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>',
+    threads: '<path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/>',
     bluesky: '<path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.829.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/>'
   };
-  function socialLinks() {
+  function socialLinks(where) {
     return (B.social || []).map(function (s) {
-      return '<a href="#" aria-label="' + esc(B.name + ' on ' + s[0]) + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + (ICONS[s[1]] || '') + '</svg></a>';
+      return '<a href="#" data-coi-event="social_click" data-coi-surface="' + where + '" data-coi-platform="' + s[1] + '" aria-label="' + esc(B.name + ' on ' + s[0]) + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + (ICONS[s[1]] || '') + '</svg></a>';
     }).join('');
   }
   function legalLinks() {
-    return (B.pages || []).concat(B.legal || []).map(function (l) { return '<li><a href="' + esc(l[1]) + '">' + esc(l[0]) + '</a></li>'; }).join('');
+    return (B.pages || []).concat(B.legal || []).map(function (l) { return '<li><a href="' + esc(l[1]) + '" data-coi-event="footer_link_click" data-coi-surface="footer">' + esc(l[0]) + '</a></li>'; }).join('');
   }
   /* Chips sit on the page, above the first card. items = [[label, url, isCurrent?], ...] */
-  function chips(items) {
+  function chips(items, surface) {
     if (!items || !items.length) return '';
     return '<nav class="coi-chips" aria-label="Browse">' + items.map(function (c) {
-      return '<a class="coi-chip" href="' + esc(c[1]) + '"' + (c[2] ? ' aria-current="page"' : '') + '>' + esc(c[0]) + '</a>';
+      return '<a class="coi-chip" href="' + esc(c[1]) + '" data-coi-event="chip_click" data-coi-surface="' + (surface || 'home_chips') + '"' + (c[2] ? ' aria-current="page"' : '') + '>' + esc(c[0]) + '</a>';
     }).join('') + '</nav>';
   }
   /* Home feed chips are their own configurable list (in WordPress: a menu assigned to the "Home feed chips" location).
@@ -66,10 +67,10 @@
   }
   function drawerHtml() {
     var secs = (B.categories || []).map(function (c) {
-      var kids = (c.children || []).map(function (k) { return '<li><a href="category.html?c=' + encodeURIComponent(k) + '">&nbsp;&nbsp;' + esc(k) + '</a></li>'; }).join('');
-      return '<li><a href="category.html?c=' + encodeURIComponent(c.name) + '">' + esc(c.name) + '</a></li>' + kids;
+      var kids = (c.children || []).map(function (k) { return '<li><a href="category.html?c=' + encodeURIComponent(k) + '" data-coi-event="menu_link_click" data-coi-surface="drawer">&nbsp;&nbsp;' + esc(k) + '</a></li>'; }).join('');
+      return '<li><a href="category.html?c=' + encodeURIComponent(c.name) + '" data-coi-event="menu_link_click" data-coi-surface="drawer">' + esc(c.name) + '</a></li>' + kids;
     }).join('');
-    var pages = (B.pages || []).map(function (l) { return '<li><a href="' + esc(l[1]) + '">' + esc(l[0]) + '</a></li>'; }).join('');
+    var pages = (B.pages || []).map(function (l) { return '<li><a href="' + esc(l[1]) + '" data-coi-event="menu_link_click" data-coi-surface="drawer">' + esc(l[0]) + '</a></li>'; }).join('');
     var legal = B.menuShowsLegal ? '<h2>Legal</h2><ul class="coi-drawer__legal">' + (B.legal || []).map(function (l) { return '<li><a href="' + esc(l[1]) + '">' + esc(l[0]) + '</a></li>'; }).join('') + '</ul>' : '';
     return '<button class="coi-drawer__close" aria-label="Close menu">&times;</button>' +
       '<h2>Sections</h2><ul>' + secs + '</ul><h2>About</h2><ul>' + pages + '</ul>' + legal;
@@ -81,9 +82,9 @@
     $('#coi-header').innerHTML =
       '<a class="coi-skip" href="#main">Skip to content</a>' +
       '<header class="coi-header"><div class="coi-header__bar">' +
-      '<button class="coi-menu-btn" aria-expanded="false" aria-controls="coi-drawer">' + ICON_MENU + '<span>Menu</span></button>' +
+      '<button class="coi-menu-btn" data-coi-event="menu_open" aria-expanded="false" aria-controls="coi-drawer">' + ICON_MENU + '<span>Menu</span></button>' +
       '<a class="coi-logo" href="index.html"><img src="' + esc(B.logo) + '" alt="' + esc(B.name) + '"></a>' +
-      '<div class="coi-social">' + socialLinks() + '</div>' +
+      '<div class="coi-social">' + socialLinks('header') + '</div>' +
       '<button class="coi-search-btn" aria-label="Search">' + ICON_SEARCH + '</button>' +
       '</div></header>' +
       '<div class="coi-drawer-overlay" hidden></div><aside class="coi-drawer" id="coi-drawer" hidden aria-label="Menu">' + drawerHtml() + '</aside>';
@@ -91,7 +92,7 @@
     $('#coi-footer').innerHTML =
       '<footer class="coi-footer"><div class="coi-footer__inner">' +
       '<a class="coi-footer__logo" href="index.html"><img src="' + esc(B.logo) + '" alt="' + esc(B.name) + '"></a>' +
-      '<div class="coi-footer__social">' + socialLinks() + '</div>' +
+      '<div class="coi-footer__social">' + socialLinks('footer') + '</div>' +
       '<ul class="coi-footer__links">' + legalLinks() + '</ul>' +
       '<p class="coi-footer__copy">Copyright &copy; ' + new Date().getFullYear() + ' ' + esc(B.name) + '</p></div></footer>';
 
@@ -148,17 +149,18 @@
     byDate.forEach(function (x) { if (out.length < 3 && x.id !== post.id && out.indexOf(x) < 0) out.push(x); });
     return out;
   }
-  function keepReading(list) {
+  function keepReading(list, sfx) {
+    sfx = sfx || '';
     var items = list.map(function (p) {
       return '<li><a class="coi-pick" href="article.html?p=' + p.id + '" data-coi-event="keep_reading_click" data-coi-surface="article_keep_reading"><img src="' + esc(p.img) + '" alt=""><span><strong>' + esc(p.title) + '</strong><small>' + esc(p.cat) + '</small></span></a></li>';
     }).join('');
-    return '<section class="coi-keep" aria-labelledby="coi-keep-h"><h2 id="coi-keep-h">Keep reading</h2><ol>' + items + '</ol></section>';
+    return '<section class="coi-keep" aria-labelledby="coi-keep-h' + sfx + '"><h2 id="coi-keep-h' + sfx + '">Keep reading</h2><ol>' + items + '</ol></section>';
   }
 
   /* Feed with Load more: 20 stories, then a button that adds 20 more */
   function feed(el, list, surface, chipItems) {
     var shown = 0;
-    el.innerHTML = chips(chipItems) + '<div class="coi-feed" id="coi-feed"></div><div class="coi-load"><button class="coi-btn" type="button">Load more</button><p class="coi-end" hidden>You&rsquo;re all caught up.</p></div>';
+    el.innerHTML = chips(chipItems) + '<div class="coi-feed" id="coi-feed"></div><div class="coi-load"><button class="coi-btn" type="button" data-coi-event="load_more_click" data-coi-surface="' + surface + '">Load more</button><p class="coi-end" hidden>You&rsquo;re all caught up.</p></div>';
     var box = $('#coi-feed'), btn = $('.coi-btn', el), end = $('.coi-end', el);
     function more() {
       var first = null, html = '', upto = Math.min(shown + PER_PAGE, list.length);
@@ -190,7 +192,7 @@
   function subChips(items) {
     if (!items.length) return '';
     return '<div class="coi-subchips" aria-label="Browse by topic">' + items.map(function (c) {
-      return '<a class="coi-chip" href="' + esc(c[1]) + '"' + (c[2] ? ' aria-current="page"' : '') + '>' + esc(c[0]) + '</a>';
+      return '<a class="coi-chip" href="' + esc(c[1]) + '" data-coi-event="chip_click" data-coi-surface="category_subchips"' + (c[2] ? ' aria-current="page"' : '') + '>' + esc(c[0]) + '</a>';
     }).join('') + '</div>';
   }
   function category() {
@@ -223,8 +225,8 @@
       '<p class="coi-byline">By <strong>' + esc(B.name) + ' staff</strong> &middot; Updated <time datetime="' + esc(p.modified) + '">' + fmtDate(p.modified) + '</time></p>' +
       '<figure class="coi-hero"><img src="' + esc(p.img) + '" alt=""><figcaption>Photo caption goes here. (Sample.)</figcaption></figure>' +
       '<div class="coi-prose">' + (window.COI_ARTICLE ? COI_ARTICLE.html : '') + '</div>' +
-      '<div class="coi-share"><span>Share</span><a href="#">Facebook</a><a href="#">X</a><a href="#">Email</a><a href="#">Copy link</a></div>' +
-      '<div class="coi-keep--mobile">' + keepReading(keep) + '</div>' +
+      '<div class="coi-share"><span>Share</span><a href="#" data-coi-event="share_click" data-coi-platform="facebook">Facebook</a><a href="#" data-coi-event="share_click" data-coi-platform="x">X</a><a href="#" data-coi-event="share_click" data-coi-platform="email">Email</a><a href="#" data-coi-event="share_click" data-coi-platform="copy_link">Copy link</a></div>' +
+      '<div class="coi-keep--mobile">' + keepReading(keep, '-m') + '</div>' +
       '</article>' +
       '<aside class="coi-rail--right" aria-label="Advertising and related"><div class="coi-sticky">' + adSlot('rail-right-top') + keepReading(keep) + '</div></aside>';
     document.querySelector('.coi-layout').classList.add('coi-layout--article');
