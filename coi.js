@@ -27,7 +27,6 @@
 
   /* ---------- Template parts ---------- */
   var ICON_MENU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
-  var ICON_SEARCH = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>';
 
   /* Platform icons (24x24, filled with the brand social color) */
   var ICONS = {
@@ -85,7 +84,6 @@
       '<button class="coi-menu-btn" data-coi-event="menu_open" aria-expanded="false" aria-controls="coi-drawer">' + ICON_MENU + '<span>Menu</span></button>' +
       '<a class="coi-logo" href="index.html"><img src="' + esc(B.logo) + '" alt="' + esc(B.name) + '"></a>' +
       '<div class="coi-social">' + socialLinks('header') + '</div>' +
-      '<button class="coi-search-btn" aria-label="Search">' + ICON_SEARCH + '</button>' +
       '</div></header>' +
       '<div class="coi-drawer-overlay" hidden></div><aside class="coi-drawer" id="coi-drawer" hidden aria-label="Menu">' + drawerHtml() + '</aside>';
 

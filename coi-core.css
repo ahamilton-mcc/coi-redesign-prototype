@@ -81,11 +81,8 @@ a { color: inherit; }
 }
 .coi-social svg, .coi-footer__social svg { width: 1.05rem; height: 1.05rem; fill: currentColor; }   /* about 18px, matches today's header icons */
 .coi-social a:hover, .coi-footer__social a:hover { color: var(--coi-primary); background: var(--coi-surface); }
-.coi-search-btn { justify-self: end; background: none; border: 0; padding: 0.4rem; color: var(--coi-primary); cursor: pointer; }
-.coi-search-btn svg { width: 1.4rem; height: 1.4rem; }
 @media (min-width: 922px) {
   .coi-social { display: flex; }
-  .coi-search-btn { display: none; }
   .coi-logo img { height: 3.3rem; }
 }
 @media (max-width: 543px) { .coi-menu-btn span { display: none; } }
